@@ -2,12 +2,15 @@ name: Daily Stock Briefing
 
 on:
   schedule:
-    # 월~금 한국시간 오전 9:05 (UTC 00:05)
-    - cron: '5 0 * * 1-5'
-    # 월~금 한국시간 오후 3:35 (UTC 06:35)
-    - cron: '35 6 * * 1-5'
-    # 월~금 한국시간 저녁 8:05 (UTC 11:05)
-    - cron: '5 11 * * 1-5'
+    # 월\~금 한국시간 오전 9:05
+    - cron: '5 9 * * 1-5'
+      timezone: 'Asia/Seoul'
+    # 월\~금 한국시간 오후 3:35
+    - cron: '35 15 * * 1-5'
+      timezone: 'Asia/Seoul'
+    # 월\~금 한국시간 저녁 8:05
+    - cron: '5 20 * * 1-5'
+      timezone: 'Asia/Seoul'
   workflow_dispatch:
 
 jobs:
